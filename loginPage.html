@@ -1,423 +1,476 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-      Login
-    </title>
-  </head>
-  <body>
-    <style>
-      body {
-        background-image: url('https://raw.githubusercontent.com/iBrunos/LoginPage/main/assets/bg_vpn.png');
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        background-size: cover;
-        -o-background-size: cover;
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    Login
+  </title>
+</head>
+
+<body>
+  <style>
+    body {
+      background-image: url('https://raw.githubusercontent.com/iBrunos/LoginPage/main/assets/bg_vpn.png');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      background-size: cover;
+      -o-background-size: cover;
+      width: 100%;
+      height: 100vh;
+      margin: 0;
+      color: #ffffff;
+    }
+
+    .form {
+      margin-top: 100px;
+      display: flex;
+      flex-direction: column;
+      color: #000000;
+      gap: 10px;
+      background-color: transparent;
+      width: 450px;
+      border-radius: 20px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    ::placeholder {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .form button {
+      align-self: flex-end;
+    }
+
+    .flex-column>label {
+      color: #151717;
+      font-weight: 600;
+    }
+
+    .inputForm {
+      border: 1.5px solid #ecedec;
+      border-radius: 10px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      padding-left: 10px;
+      transition: border-color 0.2s ease-in-out;
+      color: black;
+    }
+
+    .inputForm:hover {
+      border-color: #ffffff;
+    }
+
+    .input {
+      margin-left: 10px;
+      border-radius: 10px;
+      border: none;
+      width: 85%;
+      height: 100%;
+      background-color: transparent;
+      color: white;
+    }
+
+    .input:focus {
+      outline: none;
+    }
+
+    .inputForm:focus-within {
+      border: 1.5px solid #2d79f3;
+    }
+
+    .input::placeholder {
+      color: white;
+      opacity: 0.7;
+    }
+
+    .flex-row {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+      justify-content: space-between;
+    }
+
+    .flex-row>div>label {
+      font-size: 14px;
+      color: black;
+      font-weight: 400;
+    }
+
+    .span {
+      font-size: 14px;
+      margin-left: 5px;
+      color: #2d79f3;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .button-submit {
+      appearance: none;
+      background-color: transparent;
+      border: 0.125em solid #2d79f3;
+      border-radius: 10px;
+      box-sizing: border-box;
+      color: white;
+      cursor: pointer;
+      display: inline-block;
+      font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-size: large;
+      font-weight: 600;
+      line-height: normal;
+      margin: 20px 0 10px 0;
+      min-height: 2em;
+      min-width: 0;
+      outline: none;
+      padding: 0;
+      text-align: center;
+      text-decoration: none;
+      transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      will-change: transform;
+      width: 394.5px;
+      height: 40px;
+    }
+
+    .button-submit:hover {
+      background-color: transparent;
+      color: white;
+    }
+
+    .p {
+      text-align: center;
+      color: black;
+      font-size: 14px;
+      margin: 5px 0;
+    }
+
+    .btn {
+      margin-top: 10px;
+      width: 100%;
+      height: 50px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 500;
+      gap: 10px;
+      border: 1px solid #ededef;
+      background-color: white;
+      cursor: pointer;
+      transition: 0.2s ease-in-out;
+    }
+
+    .btn:hover {
+      border: 1px solid #2d79f3;
+      ;
+    }
+
+    button {
+      appearance: none;
+      background-color: transparent;
+      border: 0.125em solid #00adc2fe;
+      border-radius: 0.9375em;
+      box-sizing: border-box;
+      color: #000000;
+      cursor: pointer;
+      display: inline-block;
+      font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-size: 16px;
+      font-weight: 600;
+      line-height: normal;
+      margin: 0;
+      min-height: 3.75em;
+      min-width: 0;
+      outline: none;
+      padding: 10px;
+      text-align: center;
+      text-decoration: none;
+      transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      will-change: transform;
+    }
+
+    button:disabled {
+      pointer-events: none;
+    }
+
+    button:hover {
+      color: #fff;
+      background-color: #1A1A1A;
+      box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+      transform: translateY(-2px);
+    }
+
+    button:active {
+      box-shadow: none;
+      transform: translateY(0);
+    }
+
+    .rememberPassword {
+      color: #ffffff !important;
+    }
+
+    .footerForm {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 10px;
+    }
+
+    .headerForm {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: black;
+      width: auto;
+    }
+
+    .main {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    }
+
+    .security-tips {
+      flex: 1;
+      max-width: 600px;
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #ffffff;
+    }
+
+    .card {
+      width: 140%;
+      height: auto;
+      padding: 10px;
+      border-radius: 30px;
+      background: transparent;
+      box-shadow: 15px 15px 30px rgb(25, 25, 25),
+        -15px -15px 30px rgb(60, 60, 60);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .card-item {
+      flex: 1 0 calc(25% - 20px);
+      text-align: center;
+      font-size: medium;
+    }
+
+    .card-item img {
+      width: 35%;
+      border-radius: 15px;
+    }
+
+    @media only screen and (max-width: 1400px) {
+      .card {
         width: 100%;
-        height: 100vh;
-        margin: 0;
-        color: #ffffff;
       }
+    }
+
+    @media only screen and (max-width: 400px) {
+      .card {
+        width: 100%;
+        padding: 30px;
+        flex: 1 0 calc(50% - 20px);
+        text-align: center;
+      }
+
       .form {
         margin-top: 100px;
-        display: flex;
-        flex-direction: column;
-        color: #000000;
-        gap: 10px;
-        background-color: white;
-        width: 450px;
-        border-radius: 20px;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        padding: 20px;
+        width: 400px;
       }
-      ::placeholder {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      }
-      .form button {
-        align-self: flex-end;
-      }
-      .flex-column>label {
-        color: #151717;
-        font-weight: 600;
-      }
-      .inputForm {
-        border: 1.5px solid #ecedec;
-        border-radius: 10px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        padding-left: 10px;
-        transition: border-color 0.2s ease-in-out;
-        color: black;
-      }
-      .inputForm:hover {
-        border-color: #ffffff;
-      }
-      .input {
-        margin-left: 10px;
-        border-radius: 10px;
-        border: none;
-        width: 85%;
-        height: 100%;
-        background-color: transparent;
-        color: white;
-      }
-      .input:focus {
-        outline: none;
-      }
-      .inputForm:focus-within {
-        border: 1.5px solid #2d79f3;
-      }
-      .input::placeholder {
-        color: white;
-        opacity: 0.7;
-      }
-      .flex-row {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 10px;
-        justify-content: space-between;
-      }
-      .flex-row>div>label {
-        font-size: 14px;
-        color: black;
-        font-weight: 400;
-      }
-      .span {
-        font-size: 14px;
-        margin-left: 5px;
-        color: #2d79f3;
-        font-weight: 500;
-        cursor: pointer;
-      }
-      .button-submit {
-        appearance: none;
-        background-color: transparent;
-        border: 0.125em solid black;
-        border-radius: 10px;
-        box-sizing: border-box;
-        color: black;
-        cursor: pointer;
-        display: inline-block;
-        font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-        font-size: large;
-        font-weight: 600;
-        line-height: normal;
-        margin: 20px 0 10px 0;
-        min-height: 2em;
-        min-width: 0;
-        outline: none;
-        padding: 0;
-        text-align: center;
-        text-decoration: none;
-        transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
-        user-select: none;
-        -webkit-user-select: none;
-        touch-action: manipulation;
-        will-change: transform;
-        width: 394.5px;
-        height: 40px;
-      }
-      .button-submit:hover {
-        background-color: transparent;
-        color: #000000;
-      }
-      .p {
-        text-align: center;
-        color: black;
-        font-size: 14px;
-        margin: 5px 0;
-      }
-      .btn {
-        margin-top: 10px;
-        width: 100%;
-        height: 50px;
-        border-radius: 10px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-weight: 500;
-        gap: 10px;
-        border: 1px solid #ededef;
-        background-color: white;
-        cursor: pointer;
-        transition: 0.2s ease-in-out;
-      }
-      .btn:hover {
-        border: 1px solid #2d79f3;
-        ;
-      }
-      button {
-        appearance: none;
-        background-color: transparent;
-        border: 0.125em solid #00adc2fe;
-        border-radius: 0.9375em;
-        box-sizing: border-box;
-        color: #000000;
-        cursor: pointer;
-        display: inline-block;
-        font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-        font-size: 16px;
-        font-weight: 600;
-        line-height: normal;
-        margin: 0;
-        min-height: 3.75em;
-        min-width: 0;
-        outline: none;
-        padding: 10px;
-        text-align: center;
-        text-decoration: none;
-        transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
-        user-select: none;
-        -webkit-user-select: none;
-        touch-action: manipulation;
-        will-change: transform;
-      }
-      button:disabled {
-        pointer-events: none;
-      }
-      button:hover {
-        color: #fff;
-        background-color: #1A1A1A;
-        box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
-        transform: translateY(-2px);
-      }
-      button:active {
-        box-shadow: none;
-        transform: translateY(0);
-      }
-      .rememberPassword {
-        color: #ffffff !important;
-      }
-      .footerForm {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        padding-bottom: 10px;
-      }
-      .headerForm {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        color: black;
-        width: auto;
-      }
+
       .main {
-        width: 100%;
         display: flex;
+        flex-direction: column;
         flex-wrap: wrap;
         justify-content: space-around;
+        align-items: center;
         font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
       }
-      .security-tips {
-        flex: 1;
-        max-width: 600px;
-        margin-top: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        color: #ffffff;
-      }
-      .card {
-        width: 140%;
-        height: auto;
-        padding: 10px;
-        border-radius: 30px;
-        background: transparent;
-        box-shadow: 15px 15px 30px rgb(25, 25, 25),
-          -15px -15px 30px rgb(60, 60, 60);
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-      }
+
       .card-item {
-        flex: 1 0 calc(25% - 20px);
-        text-align: center;
+        flex: 1 0 calc(50% - 20px);
       }
-      .card-item img {
-        width: 35%;
-        border-radius: 15px;
-      }
-      @media only screen and (max-width: 1400px) {
-        .card {
-          width: 100%;
-        }
-      }
-      @media only screen and (max-width: 400px) {
-        .card {
-          width: 100%;
-          padding: 30px;
-          flex: 1 0 calc(50% - 20px);
-          text-align: center;
-        }
-        .form {
-          margin-top: 100px;
-          padding: 20px;
-          width: 400px;
-        }
-        .main {
-          display: flex;
-          flex-direction: column;
-          flex-wrap: wrap;
-          justify-content: space-around;
-          align-items: center;
-          font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-        }
-        .card-item {
-          flex: 1 0 calc(50% - 20px);
-        }
-      }
-      .sectionForm {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .wide-inputs input {
-        justify-content: center;
-        align-items: center;
-        padding: 10px;
-        margin-left: 1px;
-        margin-right: 1px;
-        border-radius: 10px;
-        margin-top: 10px;
-        width: 95%;
-      }
-    </style>
-    <section class="main">
-      <form class="form" action="%%SSL_ACT%%" method="%%SSL_METHOD%%" name="f" autocomplete="off">
-        <div class="headerForm">
-          <img src="https://raw.githubusercontent.com/iBrunos/LoginPage/main/assets/logo_vpn.png"
-               alt="Logo representando VPN">
-          <h1 class="text-center">
-            ACESSO REMOTO
+    }
+
+    .sectionForm {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .wide-inputs input {
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      margin-left: 1px;
+      margin-right: 1px;
+      border-radius: 10px;
+      border-color: #2d79f3;
+      margin-top: 10px;
+      width: 95%;
+      background-color: transparent;
+      color: #ffffff;
+      /* Define a cor do texto para branco */
+    }
+
+    .wide-inputs input::placeholder {
+      color: #ffffff;
+      /* Define a cor do placeholder para branco */
+    }
+
+    .text-center {
+      color: white;
+    }
+  </style>
+  <section class="main">
+    <form class="form" action="%%SSL_ACT%%" method="%%SSL_METHOD%%" name="f" autocomplete="off">
+      <div class="headerForm">
+        <img src="https://raw.githubusercontent.com/iBrunos/LoginPage/main/assets/logo_vpn.png"
+          alt="Logo representando VPN">
+        <h1 class="text-center">
+          ACESSO REMOTO
+        </h1>
+      </div>
+      <div class="sectionForm">
+        <div class="sub-content">
+
+          <div class="wide-inputs">
+            %%SSL_LOGIN%%
+          </div>
+          <div class="button-actions wide">
+            <button class="button-submit" onClick="try_login()" type="button" name="login_button" id="login_button">
+              Entrar
+            </button>
+            <div class="footerForm">
+              <img src="https://raw.githubusercontent.com/iBrunos/LoginPage/main/assets/logo_cogel.png"
+                alt="Logo da COGEL">
+              <img src="https://raw.githubusercontent.com/iBrunos/LoginPage/main/assets/logo_semit.png"
+                alt="Logo da SEMIT">
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <section class="security-tips">
+      <h1>
+        DICAS DE SEGURANÇA
+      </h1>
+      <div class="card">
+        <div class="card-item">
+          <img src="https://raw.githubusercontent.com/iBrunos/LoginPage/main/assets/icone_nao_se_conecte.png"
+            alt="Não se conecte em outra rede wi-fi que não seja a sua">
+          <h1>
+            Não se conecte em outra rede wi-fi que não seja a sua
           </h1>
         </div>
-        <div class="sectionForm">
-          <div class="sub-content">
-            
-            <div class="wide-inputs">
-              %%SSL_LOGIN%%
-            </div>
-            <div class="button-actions wide">
-              <button class="button-submit" onClick="try_login()" type="button" name="login_button"
-                      id="login_button">
-                Entrar
-              </button>
-              <div class="footerForm">
-                <img src="https://raw.githubusercontent.com/iBrunos/LoginPage/main/assets/logo_cogel.png"
-                     alt="Logo da COGEL">
-                <img src="https://raw.githubusercontent.com/iBrunos/LoginPage/main/assets/logo_semit.png"
-                     alt="Logo da SEMIT">
-              </div>
-            </div>
-          </div>
+        <div class="card-item">
+          <img src="https://raw.githubusercontent.com/iBrunos/LoginPage/main/assets/icone_cadeado_seguranca.png"
+            alt="Evite deixar seu computador aberto">
+          <h1>
+            Evite deixar seu computador aberto
+          </h1>
         </div>
-      </form>
-      <section class="security-tips">
-        <h1>
-          DICAS DE SEGURANÇA
-        </h1>
-        <div class="card">
-          <div class="card-item">
-            <img src="https://raw.githubusercontent.com/iBrunos/LoginPage/main/assets/icone_nao_se_conecte.png"
-                 alt="Não se conecte em outra rede wi-fi que não seja a sua">
-            <h1>
-              Não se conecte em outra rede wi-fi que não seja a sua
-            </h1>
-          </div>
-          <div class="card-item">
-            <img src="https://raw.githubusercontent.com/iBrunos/LoginPage/main/assets/icone_cadeado_seguranca.png"
-                 alt="Evite deixar seu computador aberto">
-            <h1>
-              Evite deixar seu computador aberto
-            </h1>
-          </div>
-          <div class="card-item">
-            <img src="https://raw.githubusercontent.com/iBrunos/LoginPage/main/assets/icone_anti_virus.png"
-                 alt="Antivírus sempre atualizados">
-            <h1>
-              Antivírus sempre atualizados
-            </h1>
-          </div>
-          <div class="card-item">
-            <img src="https://raw.githubusercontent.com/iBrunos/LoginPage/main/assets/icone_compartilhamento.png"
-                 alt="Compartilhamento de arquivos, consulte o manual de uso">
-            <h1>
-              Compartilhamento de arquivos, consulte o manual de uso
-            </h1>
-          </div>
-          <div class="card-item">
-            <img src="https://raw.githubusercontent.com/iBrunos/LoginPage/main/assets/icone_ligacoes_conferencias.png"
-                 alt="Ligações e conferências em ambientes controlados">
-            <h1>
-              Ligações e conferências em ambientes controlados
-            </h1>
-          </div>
-          <div class="card-item">
-            <img src="https://raw.githubusercontent.com/iBrunos/LoginPage/main/assets/icone_cuidado_extras.png"
-                 alt="Cuidado extra commensagens maliciosas">
-            <h1>
-              Cuidado extra com mensagens maliciosas
-            </h1>
-          </div>
-          <div class="card-item">
-            <img src="https://raw.githubusercontent.com/iBrunos/LoginPage/main/assets/icone_dispositivos_moveis.png"
-                 alt="Dispositivos móveis, amplie os cuidados">
-            <h1>
-              Dispositivos móveis, amplie os cuidados
-            </h1>
-          </div>
-          <div class="card-item">
-            <img src="https://raw.githubusercontent.com/iBrunos/LoginPage/main/assets/icone_evite_baixar.png"
-                 alt="Evite baixar arquivos em pen-drives e hd's externos">
-            <h1>
-              Evite baixar arquivos em pen-drives e hd's externos
-            </h1>
-          </div>
+        <div class="card-item">
+          <img src="https://raw.githubusercontent.com/iBrunos/LoginPage/main/assets/icone_anti_virus.png"
+            alt="Antivírus sempre atualizados">
+          <h1>
+            Antivírus sempre atualizados
+          </h1>
         </div>
-        <h1>
-          DICAS DE USO
-        </h1>
-        <div class="card">
-          <div class="card-item">
-            <img src="https://raw.githubusercontent.com/iBrunos/LoginPage/main/assets/icone_manual_vpn.png"
-                 alt="Manual do VPN Acesso Remoto">
-            <h1>
-              Manual do VPN Acesso Remoto
-            </h1>
-          </div>
-          <div class="card-item">
-            <img src="https://raw.githubusercontent.com/iBrunos/LoginPage/main/assets/icone_cartilha.png"
-                 alt="Cartilhas de Aprendizado">
-            <h1>
-              Cartilhas de Aprendizado
-            </h1>
-          </div>
-          <div class="card-item">
-            <img src="https://raw.githubusercontent.com/iBrunos/LoginPage/main/assets/icone_acesso_portal.png"
-                 alt="Acesso ao Portal da Cogel">
-            <h1>
-              Acesso ao Portal da Cogel
-            </h1>
-          </div>
-          <div class="card-item">
-            <img src="https://raw.githubusercontent.com/iBrunos/LoginPage/main/assets/icone_acesso_direto.png"
-                 alt="Contato direto com Equipe de Suporte GLPI">
-            <h1>
-              Contato direto com Equipe de Suporte GLPI
-            </h1>
-          </div>
+        <div class="card-item">
+          <img src="https://raw.githubusercontent.com/iBrunos/LoginPage/main/assets/icone_compartilhamento.png"
+            alt="Compartilhamento de arquivos, consulte o manual de uso">
+          <h1>
+            Compartilhamento de arquivos, consulte o manual de uso
+          </h1>
         </div>
+        <div class="card-item">
+          <img src="https://raw.githubusercontent.com/iBrunos/LoginPage/main/assets/icone_ligacoes_conferencias.png"
+            alt="Ligações e conferências em ambientes controlados">
+          <h1>
+            Ligações e conferências em ambientes controlados
+          </h1>
+        </div>
+        <div class="card-item">
+          <img src="https://raw.githubusercontent.com/iBrunos/LoginPage/main/assets/icone_cuidado_extras.png"
+            alt="Cuidado extra commensagens maliciosas">
+          <h1>
+            Cuidado extra com mensagens maliciosas
+          </h1>
+        </div>
+        <div class="card-item">
+          <img src="https://raw.githubusercontent.com/iBrunos/LoginPage/main/assets/icone_dispositivos_moveis.png"
+            alt="Dispositivos móveis, amplie os cuidados">
+          <h1>
+            Dispositivos móveis, amplie os cuidados
+          </h1>
+        </div>
+        <div class="card-item">
+          <img src="https://raw.githubusercontent.com/iBrunos/LoginPage/main/assets/icone_evite_baixar.png"
+            alt="Evite baixar arquivos em pen-drives e hd's externos">
+          <h1>
+            Evite baixar arquivos em pen-drives e hd's externos
+          </h1>
+        </div>
+      </div>
+      <h1>
+        DICAS DE USO
+      </h1>
+      <div class="card">
+        <div class="card-item">
+          <img src="https://raw.githubusercontent.com/iBrunos/LoginPage/main/assets/icone_manual_vpn.png"
+            alt="Manual do VPN Acesso Remoto">
+          <h1>
+            Manual do VPN Acesso Remoto
+          </h1>
+        </div>
+        <div class="card-item">
+          <img src="https://raw.githubusercontent.com/iBrunos/LoginPage/main/assets/icone_cartilha.png"
+            alt="Cartilhas de Aprendizado">
+          <h1>
+            Cartilhas de Aprendizado
+          </h1>
+        </div>
+        <div class="card-item">
+          <img src="https://raw.githubusercontent.com/iBrunos/LoginPage/main/assets/icone_acesso_portal.png"
+            alt="Acesso ao Portal da Cogel">
+          <h1>
+            Acesso ao Portal da Cogel
+          </h1>
+        </div>
+        <div class="card-item">
+          <img src="https://raw.githubusercontent.com/iBrunos/LoginPage/main/assets/icone_acesso_direto.png"
+            alt="Contato direto com Equipe de Suporte GLPI">
+          <h1>
+            Contato direto com Equipe de Suporte GLPI
+          </h1>
+        </div>
+      </div>
       </div>
     </section>
   </section>
 </body>
 %%SSL_HIDDEN%%
+
 </html>
