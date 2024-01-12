@@ -311,6 +311,19 @@
       .card-item {
         flex: 1 0 calc(50% - 20px);
       }
+      .wide-inputs input {
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      margin-left: 1px;
+      margin-right: 1px;
+      border-radius: 10px;
+      border-color: white;
+      margin-top: 10px;
+      width: 94%;
+      background-color: transparent;
+      color: #ffffff;
+    }
     }
 
     .sectionForm {
@@ -328,26 +341,28 @@
       border-radius: 10px;
       border-color: white;
       margin-top: 10px;
-      width: 95%;
+      width: 94%;
       background-color: transparent;
       color: #ffffff;
-      /* Define a cor do texto para branco */
     }
 
     .wide-inputs input::placeholder {
       color: #ffffff;
-      /* Define a cor do placeholder para branco */
     }
 
     .text-center {
       color: white;
+    }
+
+    .vpn-image {
+      width: 50%;
     }
   </style>
   <section class="main">
     <form class="form" action="%%SSL_ACT%%" method="%%SSL_METHOD%%" name="f" autocomplete="off">
       <div class="headerForm">
         <img src="https://raw.githubusercontent.com/iBrunos/LoginPage/main/assets/logo_vpn.png"
-          alt="Logo representando VPN">
+          alt="Logo representando VPN" class="vpn-image">
         <h1 class="text-center">
           ACESSO REMOTO
         </h1>
